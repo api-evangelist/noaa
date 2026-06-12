@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/noaa/main/json-schema/noaa-nws-alertcollection.json",
+  "title": "AlertCollection",
+  "description": "NOAA NWS API schema for AlertCollection",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "A title describing the alert collection"
+    },
+    "updated": {
+      "type": "string",
+      "description": "The last time a change occurred to this collection",
+      "format": "date-time"
+    },
+    "pagination": {
+      "$ref": "#/components/schemas/PaginationInfo"
+    }
+  }
+}

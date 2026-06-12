@@ -1,0 +1,70 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -118.25,
+          34.05
+        ],
+        [
+          -118.24,
+          34.05
+        ],
+        [
+          -118.24,
+          34.06
+        ],
+        [
+          -118.25,
+          34.06
+        ],
+        [
+          -118.25,
+          34.05
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/gridpoints/LOX/155,45",
+    "@type": "wx:Gridpoint",
+    "updateTime": "2024-01-16T10:12:00+00:00",
+    "validTimes": "2024-01-16T04:00:00+00:00/P7DT20H",
+    "elevation": {
+      "unitCode": "wmoUnit:m",
+      "value": 52
+    },
+    "forecastOffice": "https://api.weather.gov/offices/LOX",
+    "gridId": "LOX",
+    "gridX": 155,
+    "gridY": 45,
+    "temperature": {
+      "uom": "wmoUnit:degC",
+      "values": [
+        {
+          "validTime": "2024-01-16T04:00:00+00:00/PT1H",
+          "value": 14.4
+        },
+        {
+          "validTime": "2024-01-16T05:00:00+00:00/PT1H",
+          "value": 13.9
+        }
+      ]
+    },
+    "windSpeed": {
+      "uom": "wmoUnit:km_h-1",
+      "values": [
+        {
+          "validTime": "2024-01-16T04:00:00+00:00/PT1H",
+          "value": 29.6
+        },
+        {
+          "validTime": "2024-01-16T05:00:00+00:00/PT1H",
+          "value": 35.2
+        }
+      ]
+    }
+  }
+}

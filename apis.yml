@@ -53,6 +53,22 @@ apis:
         url: https://www.weather.gov/documentation/services-web-api
       - type: OpenAPI
         url: https://api.weather.gov/openapi.json
+      - type: OpenAPI
+        url: openapi/noaa-nws-openapi.yml
+      - type: JSONSchema
+        url: json-schema/noaa-nws-alert.json
+      - type: JSONSchema
+        url: json-schema/noaa-nws-alertcollection.json
+      - type: JSONSchema
+        url: json-schema/noaa-nws-observation.json
+      - type: JSONSchema
+        url: json-schema/noaa-nws-zone.json
+      - type: JSONSchema
+        url: json-schema/noaa-nws-point.json
+      - type: Example
+        url: examples/noaa-nws-alert-example.json
+      - type: Example
+        url: examples/noaa-nws-gridpoint-forecast-example.json
       - type: GitHubRepository
         url: https://github.com/weather-gov/api
   - name: Climate Data Online (CDO) API
@@ -121,6 +137,18 @@ apis:
         url: https://aviationweather.gov/data/api/
       - type: OpenAPI
         url: https://aviationweather.gov/data/schema/openapi.yaml
+      - type: OpenAPI
+        url: openapi/noaa-aviation-weather-openapi.yml
+      - type: JSONSchema
+        url: json-schema/noaa-aviation-metarjson.json
+      - type: JSONSchema
+        url: json-schema/noaa-aviation-tafjson.json
+      - type: JSONSchema
+        url: json-schema/noaa-aviation-pireptext.json
+      - type: JSONSchema
+        url: json-schema/noaa-aviation-airsigmetjson.json
+      - type: Example
+        url: examples/noaa-aviation-metar-example.json
 common:
   - type: Website
     url: https://www.noaa.gov
@@ -146,6 +174,12 @@ common:
     url: rate-limits/noaa-rate-limits.yml
   - type: FinOps
     url: finops/noaa-finops.yml
+  - type: Vocabulary
+    url: vocabulary/noaa-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/noaa-context.jsonld
+  - type: Example
+    url: examples/noaa-coops-tides-example.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

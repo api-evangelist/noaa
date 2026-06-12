@@ -1,0 +1,197 @@
+vocabulary:
+  name: NOAA API Vocabulary
+  description: >-
+    Controlled vocabulary for NOAA National Weather Service, Aviation Weather,
+    CO-OPS Tides and Currents, and Climate Data Online APIs.
+  url: https://raw.githubusercontent.com/api-evangelist/noaa/main/vocabulary/noaa-vocabulary.yml
+  version: '1.0'
+  created: '2026-06-12'
+  modified: '2026-06-12'
+
+terms:
+
+  # Alert terms
+  - term: Alert
+    domain: NWS
+    definition: >-
+      A weather alert issued by the National Weather Service indicating a
+      meteorological hazard affecting a defined geographic area.
+    url: https://www.weather.gov/media/notification/pdf2/scn20-71_nws_alert_simplification.pdf
+
+  - term: AlertCertainty
+    domain: NWS
+    definition: >-
+      The likelihood of an alert event occurring: Observed, Likely, Possible,
+      Unlikely, or Unknown.
+    values:
+      - Observed
+      - Likely
+      - Possible
+      - Unlikely
+      - Unknown
+
+  - term: AlertSeverity
+    domain: NWS
+    definition: >-
+      The severity level of a weather alert: Extreme, Severe, Moderate,
+      Minor, or Unknown.
+    values:
+      - Extreme
+      - Severe
+      - Moderate
+      - Minor
+      - Unknown
+
+  - term: AlertUrgency
+    domain: NWS
+    definition: >-
+      The time urgency of a weather alert: Immediate, Expected, Future,
+      Past, or Unknown.
+    values:
+      - Immediate
+      - Expected
+      - Future
+      - Past
+      - Unknown
+
+  - term: AlertStatus
+    domain: NWS
+    definition: >-
+      The status of a weather alert message: Actual, Exercise, System,
+      Test, or Draft.
+    values:
+      - Actual
+      - Exercise
+      - System
+      - Test
+      - Draft
+
+  # Forecast terms
+  - term: GridpointForecast
+    domain: NWS
+    definition: >-
+      Numerical weather forecast data associated with a specific grid cell
+      in the NWS mesoscale analysis grid. Includes temperature, wind,
+      precipitation probability, sky cover, and other parameters as
+      time-series arrays.
+
+  - term: Point
+    domain: NWS
+    definition: >-
+      A geographic coordinate (latitude/longitude) used to look up
+      associated NWS forecast office, grid coordinates, observation
+      stations, and time zone information.
+
+  - term: Zone
+    domain: NWS
+    definition: >-
+      A geographic region defined by the NWS for forecasting purposes.
+      Zones may be forecast zones, county zones, fire weather zones, or
+      coastal/offshore zones.
+
+  - term: Observation
+    domain: NWS
+    definition: >-
+      A weather observation report from a surface station, including
+      temperature, dewpoint, wind speed/direction, pressure, visibility,
+      sky conditions, and present weather.
+
+  # Aviation terms
+  - term: METAR
+    domain: AviationWeather
+    definition: >-
+      Meteorological Aerodrome Report — a standardized format for reporting
+      current surface weather observations at airports. Provides wind,
+      visibility, clouds, temperature, dewpoint, and altimeter setting.
+    url: https://aviationweather.gov/data/api/#/Data/dataMetar
+
+  - term: TAF
+    domain: AviationWeather
+    definition: >-
+      Terminal Aerodrome Forecast — a format for reporting weather forecasts
+      for a 5 statute mile radius around an airport, covering a 24- to
+      30-hour period.
+    url: https://aviationweather.gov/data/api/#/Data/dataTaf
+
+  - term: PIREP
+    domain: AviationWeather
+    definition: >-
+      Pilot Report — an aviation weather report issued by pilots in flight
+      describing actual weather conditions encountered, such as turbulence,
+      icing, and cloud tops.
+    url: https://aviationweather.gov/data/api/#/Data/dataPirep
+
+  - term: SIGMET
+    domain: AviationWeather
+    definition: >-
+      Significant Meteorological Information — an advisory concerning
+      non-convective weather significant to the safety of all aircraft,
+      such as severe turbulence, icing, and dust storms.
+    url: https://aviationweather.gov/data/api/#/Data/dataAirsigmet
+
+  - term: AIRMET
+    domain: AviationWeather
+    definition: >-
+      Airman's Meteorological Information — an in-flight weather advisory
+      issued for weather of operational interest to all aircraft but not
+      of sufficient severity to require a SIGMET.
+
+  - term: G-AIRMET
+    domain: AviationWeather
+    definition: >-
+      Graphical AIRMET — a digital version of the traditional text-based
+      AIRMET, providing gridded weather hazard data for icing, turbulence,
+      and IFR conditions.
+
+  # Ocean / Tides terms
+  - term: WaterLevel
+    domain: COOPS
+    definition: >-
+      A measurement of water surface elevation relative to a reference
+      datum (MLLW, MHHW, NAVD88, etc.) at a CO-OPS tidal station.
+
+  - term: TidePrediction
+    domain: COOPS
+    definition: >-
+      A prediction of future water levels based on harmonic analysis of
+      tidal constituents for a given CO-OPS station.
+
+  - term: CurrentSpeed
+    domain: COOPS
+    definition: >-
+      The velocity of water movement (in knots or m/s) measured at a
+      CO-OPS current monitoring station.
+
+  - term: Station
+    domain: COOPS
+    definition: >-
+      A physical monitoring location operated by CO-OPS or a partner
+      organization, identified by a 7-digit station ID, measuring water
+      levels, currents, or meteorological data.
+
+  # Climate / CDO terms
+  - term: DataSet
+    domain: CDO
+    definition: >-
+      A named collection of historical climate records in the NCEI Climate
+      Data Online database (e.g., GHCND for daily summaries, NORMAL_DLY
+      for climate normals).
+
+  - term: DataType
+    domain: CDO
+    definition: >-
+      A specific measured variable within a CDO dataset, such as TMAX
+      (maximum temperature), PRCP (precipitation), or SNOW (snowfall).
+
+  - term: Station
+    domain: CDO
+    definition: >-
+      A historical or operational observation station in the NCEI database,
+      identified by a station ID and associated with geographic coordinates,
+      elevation, and data availability periods.
+
+  - term: Location
+    domain: CDO
+    definition: >-
+      A geographic entity (country, state, county, zip code, or city)
+      used to filter CDO API data requests.

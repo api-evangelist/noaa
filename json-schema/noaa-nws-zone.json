@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/noaa/main/json-schema/noaa-nws-zone.json",
+  "title": "Zone",
+  "description": "NOAA NWS API schema for Zone",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "$ref": "#/components/schemas/JsonLdContext"
+    },
+    "geometry": {
+      "$ref": "#/components/schemas/GeometryString"
+    },
+    "@id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "@type": {
+      "enum": [
+        "wx:Zone"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "$ref": "#/components/schemas/NWSZoneID"
+    },
+    "type": {
+      "$ref": "#/components/schemas/NWSZoneType"
+    },
+    "name": {
+      "type": "string"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/StateTerritoryCode"
+        },
+        {
+          "enum": [
+            ""
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "forecastOffice": {
+      "type": "string",
+      "format": "uri"
+    },
+    "gridIdentifier": {
+      "type": "string"
+    },
+    "awipsLocationIdentifier": {
+      "type": "string"
+    },
+    "cwa": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NWSForecastOfficeId"
+      },
+      "deprecated": true
+    },
+    "forecastOffices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "deprecated": true
+    },
+    "timeZone": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iana-time-zone-identifier"
+      }
+    },
+    "observationStations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "radarStation": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false
+}

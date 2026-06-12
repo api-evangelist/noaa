@@ -1,0 +1,208 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "noaa": "https://api.weather.gov/ontology#",
+    "wx": "https://api.weather.gov/ontology#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+
+    "id": "@id",
+    "type": "@type",
+
+    "Alert": "wx:Alert",
+    "AlertCollection": "wx:AlertCollection",
+    "Observation": "wx:Observation",
+    "GridpointForecast": "wx:GridpointForecast",
+    "Zone": "wx:Zone",
+    "Point": "wx:Point",
+    "RadarStation": "wx:RadarStation",
+    "NWSOffice": "wx:NWSOffice",
+    "ObservationStation": "wx:ObservationStation",
+
+    "areaDesc": {"@id": "wx:areaDesc"},
+    "sent": {"@id": "wx:sent", "@type": "xsd:dateTime"},
+    "effective": {"@id": "wx:effective", "@type": "xsd:dateTime"},
+    "onset": {"@id": "wx:onset", "@type": "xsd:dateTime"},
+    "expires": {"@id": "wx:expires", "@type": "xsd:dateTime"},
+    "ends": {"@id": "wx:ends", "@type": "xsd:dateTime"},
+    "status": {"@id": "wx:status"},
+    "messageType": {"@id": "wx:messageType"},
+    "category": {"@id": "wx:category"},
+    "severity": {"@id": "wx:severity"},
+    "certainty": {"@id": "wx:certainty"},
+    "urgency": {"@id": "wx:urgency"},
+    "event": {"@id": "wx:event"},
+    "headline": {"@id": "wx:headline"},
+    "description": {"@id": "wx:description"},
+    "instruction": {"@id": "wx:instruction"},
+    "response": {"@id": "wx:response"},
+    "senderName": {"@id": "wx:senderName"},
+    "sender": {"@id": "schema:email"},
+
+    "affectedZones": {
+      "@id": "wx:affectedZones",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "geocode": {"@id": "wx:geocode"},
+    "parameters": {"@id": "wx:parameters"},
+
+    "forecastOffice": {"@id": "wx:forecastOffice", "@type": "@id"},
+    "gridId": {"@id": "wx:gridId"},
+    "gridX": {"@id": "wx:gridX", "@type": "xsd:integer"},
+    "gridY": {"@id": "wx:gridY", "@type": "xsd:integer"},
+    "updateTime": {"@id": "wx:updateTime", "@type": "xsd:dateTime"},
+    "validTimes": {"@id": "wx:validTimes"},
+    "elevation": {"@id": "wx:elevation"},
+    "temperature": {"@id": "wx:temperature"},
+    "dewpoint": {"@id": "wx:dewpoint"},
+    "windDirection": {"@id": "wx:windDirection"},
+    "windSpeed": {"@id": "wx:windSpeed"},
+    "windGust": {"@id": "wx:windGust"},
+    "barometricPressure": {"@id": "wx:barometricPressure"},
+    "seaLevelPressure": {"@id": "wx:seaLevelPressure"},
+    "visibility": {"@id": "wx:visibility"},
+    "precipitationLastHour": {"@id": "wx:precipitationLastHour"},
+    "relativeHumidity": {"@id": "wx:relativeHumidity"},
+    "apparentTemperature": {"@id": "wx:apparentTemperature"},
+    "skyCover": {"@id": "wx:skyCover"},
+    "probabilityOfPrecipitation": {"@id": "wx:probabilityOfPrecipitation"},
+    "shortForecast": {"@id": "wx:shortForecast"},
+    "detailedForecast": {"@id": "wx:detailedForecast"},
+
+    "uom": {"@id": "wx:uom", "@type": "@id"},
+    "value": {"@id": "rdf:value"},
+    "unitCode": {"@id": "wx:unitCode", "@type": "@id"},
+    "values": {"@id": "wx:values", "@container": "@set"},
+    "validTime": {"@id": "wx:validTime"},
+
+    "name": {"@id": "schema:name"},
+    "timeZone": {"@id": "wx:timeZone"},
+    "forecast": {"@id": "wx:forecast", "@type": "@id"},
+    "forecastHourly": {"@id": "wx:forecastHourly", "@type": "@id"},
+    "forecastGridData": {"@id": "wx:forecastGridData", "@type": "@id"},
+    "observationStations": {"@id": "wx:observationStations", "@type": "@id"},
+    "county": {"@id": "wx:county", "@type": "@id"},
+    "fireWeatherZone": {"@id": "wx:fireWeatherZone", "@type": "@id"},
+    "radarStation": {"@id": "wx:radarStation"},
+
+    "stationIdentifier": {"@id": "wx:stationIdentifier"},
+    "zoneType": {"@id": "wx:zoneType"},
+    "state": {"@id": "wx:state"},
+    "forecastZones": {"@id": "wx:forecastZones", "@container": "@set"},
+    "counties": {"@id": "wx:counties", "@container": "@set"},
+    "observationZones": {"@id": "wx:observationZones", "@container": "@set"},
+
+    "latitude": {"@id": "geo:lat", "@type": "xsd:decimal"},
+    "longitude": {"@id": "geo:long", "@type": "xsd:decimal"},
+
+    "METAR": "noaa:METAR",
+    "TAF": "noaa:TAF",
+    "PIREP": "noaa:PIREP",
+    "SIGMET": "noaa:SIGMET",
+    "icaoId": {"@id": "noaa:icaoId"},
+    "rawOb": {"@id": "noaa:rawObservation"},
+    "obsTime": {"@id": "noaa:observationTime", "@type": "xsd:dateTime"},
+    "temp": {"@id": "noaa:temperature", "@type": "xsd:decimal"},
+    "dewp": {"@id": "noaa:dewpoint", "@type": "xsd:decimal"},
+    "wdir": {"@id": "noaa:windDirection", "@type": "xsd:integer"},
+    "wspd": {"@id": "noaa:windSpeed", "@type": "xsd:integer"},
+    "wgst": {"@id": "noaa:windGust"},
+    "visib": {"@id": "noaa:visibility"},
+    "altim": {"@id": "noaa:altimeter", "@type": "xsd:decimal"},
+    "clouds": {"@id": "noaa:cloudLayers", "@container": "@set"},
+    "cover": {"@id": "noaa:cloudCover"},
+    "base": {"@id": "noaa:cloudBase", "@type": "xsd:integer"},
+
+    "WaterLevel": "noaa:WaterLevel",
+    "TidePrediction": "noaa:TidePrediction",
+    "CurrentObservation": "noaa:CurrentObservation",
+    "station_id": {"@id": "noaa:stationId"},
+    "station_name": {"@id": "schema:name"},
+    "water_level": {"@id": "noaa:waterLevel", "@type": "xsd:decimal"},
+    "current_speed": {"@id": "noaa:currentSpeed", "@type": "xsd:decimal"},
+    "current_direction": {"@id": "noaa:currentDirection", "@type": "xsd:decimal"},
+    "prediction": {"@id": "noaa:prediction", "@type": "xsd:decimal"},
+    "datum": {"@id": "noaa:datum"},
+
+    "ClimateRecord": "noaa:ClimateRecord",
+    "ClimateStation": "noaa:ClimateStation",
+    "DataSet": "noaa:DataSet",
+    "DataType": "noaa:DataType",
+    "TMAX": {"@id": "noaa:maxTemperature", "@type": "xsd:decimal"},
+    "TMIN": {"@id": "noaa:minTemperature", "@type": "xsd:decimal"},
+    "PRCP": {"@id": "noaa:precipitation", "@type": "xsd:decimal"},
+    "SNOW": {"@id": "noaa:snowfall", "@type": "xsd:decimal"},
+    "SNWD": {"@id": "noaa:snowDepth", "@type": "xsd:decimal"},
+    "datasetid": {"@id": "noaa:datasetId"},
+    "datatypeid": {"@id": "noaa:datatypeId"},
+    "stationid": {"@id": "noaa:stationId"},
+    "datacategoryid": {"@id": "noaa:dataCategoryId"},
+    "mindate": {"@id": "noaa:minDate", "@type": "xsd:date"},
+    "maxdate": {"@id": "noaa:maxDate", "@type": "xsd:date"},
+    "datacoverage": {"@id": "noaa:dataCoverage", "@type": "xsd:decimal"}
+  },
+  "@graph": [
+    {
+      "@id": "https://api.weather.gov/",
+      "@type": "schema:WebAPI",
+      "schema:name": "NOAA National Weather Service API",
+      "schema:description": "RESTful JSON-LD API providing weather forecasts, alerts, observations, and radar data for the United States.",
+      "schema:url": "https://www.weather.gov/documentation/services-web-api",
+      "schema:provider": {
+        "@id": "https://www.noaa.gov/",
+        "@type": "schema:GovernmentOrganization",
+        "schema:name": "National Oceanic and Atmospheric Administration (NOAA)",
+        "schema:sameAs": [
+          "https://www.wikidata.org/wiki/Q179974",
+          "https://en.wikipedia.org/wiki/National_Oceanic_and_Atmospheric_Administration"
+        ]
+      },
+      "schema:termsOfService": "https://www.weather.gov/disclaimer",
+      "schema:license": "https://www.usa.gov/government-works",
+      "schema:encodingFormat": ["application/json", "application/geo+json", "application/ld+json", "application/cap+xml"]
+    },
+    {
+      "@id": "https://aviationweather.gov/api/data",
+      "@type": "schema:WebAPI",
+      "schema:name": "NOAA Aviation Weather Center API",
+      "schema:description": "Aviation weather data API providing METARs, TAFs, PIREPs, SIGMETs, G-AIRMETs, and station information.",
+      "schema:url": "https://aviationweather.gov/data/api/",
+      "schema:provider": {
+        "@id": "https://www.noaa.gov/"
+      },
+      "schema:termsOfService": "https://aviationweather.gov/about",
+      "schema:license": "https://www.usa.gov/government-works",
+      "schema:encodingFormat": ["application/json", "application/geo+json", "application/xml", "text/plain"]
+    },
+    {
+      "@id": "https://api.tidesandcurrents.noaa.gov/api/prod",
+      "@type": "schema:WebAPI",
+      "schema:name": "NOAA CO-OPS Tides and Currents API",
+      "schema:description": "API providing water levels, tide predictions, currents, and meteorological data from US coastal monitoring stations.",
+      "schema:url": "https://tidesandcurrents.noaa.gov/api/",
+      "schema:provider": {
+        "@id": "https://www.noaa.gov/"
+      },
+      "schema:termsOfService": "https://tidesandcurrents.noaa.gov/disclaimers.html",
+      "schema:license": "https://www.usa.gov/government-works",
+      "schema:encodingFormat": ["application/json", "text/csv", "application/xml"]
+    },
+    {
+      "@id": "https://www.ncdc.noaa.gov/cdo-web/api/v2",
+      "@type": "schema:WebAPI",
+      "schema:name": "NOAA Climate Data Online (CDO) API",
+      "schema:description": "RESTful API providing access to historical weather and climate data from the NCEI Climate Data Online database.",
+      "schema:url": "https://www.ncdc.noaa.gov/cdo-web/webservices/v2",
+      "schema:provider": {
+        "@id": "https://www.noaa.gov/"
+      },
+      "schema:termsOfService": "https://www.ncdc.noaa.gov/about-ncdc/policies",
+      "schema:license": "https://www.usa.gov/government-works",
+      "schema:encodingFormat": ["application/json"]
+    }
+  ]
+}
