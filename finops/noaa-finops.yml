@@ -1,0 +1,74 @@
+name: NOAA API FinOps
+description: >-
+  NOAA APIs are federally funded public services with no direct cost to API
+  consumers. All costs are borne by the US federal government through NOAA's
+  annual appropriations. From a FinOps perspective, consumers have zero direct
+  spend on API access but should account for indirect costs such as
+  infrastructure, engineering, and data egress within their own environments.
+specificationVersion: '1.0'
+framework: FinOps Framework FOCUS-aligned
+currency: USD
+costModel:
+  type: Free Government Service
+  directCost: 0.00
+  description: >-
+    No subscription fees, request charges, or data transfer costs are levied
+    on API consumers. NOAA data is in the public domain and free for any use.
+spend:
+  directAPISpend:
+    amount: 0.00
+    currency: USD
+    description: No cost to API consumers for any NOAA API service
+  indirectCosts:
+    - category: Infrastructure
+      description: >-
+        Consumer infrastructure costs for hosting applications that use
+        NOAA data (servers, containers, cloud compute)
+      estimationMethod: Track via cloud provider billing tags on NOAA-dependent workloads
+    - category: Engineering
+      description: >-
+        Development and maintenance effort for integrations with NOAA APIs,
+        handling versioning changes and data format updates
+      estimationMethod: Track engineering hours attributed to NOAA API integration
+    - category: Data Storage
+      description: >-
+        Costs for storing cached NOAA data locally to reduce repeated API calls
+        and comply with recommended caching practices
+      estimationMethod: Storage cost per GB-month in chosen cloud/on-premise environment
+    - category: Data Egress
+      description: >-
+        Cloud data transfer costs when NOAA data is fetched into cloud workloads
+        from the public internet endpoints
+      estimationMethod: Monitor cloud provider data-in transfer costs for NOAA API traffic
+optimization:
+  recommendations:
+    - name: Use Cache Endpoints for Bulk Data
+      description: >-
+        For Aviation Weather and NWS data, use pre-compiled cache files
+        at published cache endpoints instead of repeated real-time API calls.
+        This reduces load on NOAA infrastructure and avoids rate limit blocks.
+      savingsType: Rate limit avoidance, reduced engineering retry logic
+    - name: Implement Response Caching
+      description: >-
+        Cache API responses locally for data that does not change frequently
+        (zone information, office metadata, station lists). NWS API responses
+        include cache-friendly headers.
+      savingsType: Reduced API call volume, lower egress costs
+    - name: Request Only Needed Fields
+      description: >-
+        Use available query parameters to filter responses to only the data
+        fields and time ranges needed. This reduces payload size and processing costs.
+      savingsType: Lower data transfer and processing costs
+    - name: Register Multiple CDO Tokens for High Volume
+      description: >-
+        The CDO API allows free token registration. For workloads approaching
+        the 10,000 requests/day limit, registering additional tokens with
+        different email addresses and load-balancing requests can increase
+        effective throughput at zero cost.
+      savingsType: Increased throughput within free tier
+tags:
+  - Government
+  - Free Tier
+  - Open Data
+  - Zero Direct Cost
+  - Public Domain

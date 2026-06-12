@@ -1,0 +1,151 @@
+aid: https://raw.githubusercontent.com/api-evangelist/noaa/refs/heads/main/apis.yml
+name: NOAA
+description: >-
+  The National Oceanic and Atmospheric Administration (NOAA) provides a suite
+  of publicly accessible REST APIs delivering weather observations, forecasts,
+  alerts, climate data, ocean conditions, and historical environmental records
+  from the US federal government. The National Weather Service API
+  (api.weather.gov) offers real-time forecasts, active alerts, radar data,
+  and observations across the continental United States and territories. NOAA
+  also publishes the Climate Data Online (CDO) API for access to historical
+  climate and weather datasets, the CO-OPS Tides and Currents API for water
+  level and oceanographic data, and the Aviation Weather API for aeronautical
+  weather products. All NOAA APIs are free to use as open government data with
+  no licensing restrictions.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/noaa/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+tags:
+  - Weather
+  - Climate
+  - Forecast
+  - Alerts
+  - Ocean
+  - Tides
+  - Aviation Weather
+  - Government
+  - Open Data
+  - Environmental
+apis:
+  - name: National Weather Service API
+    description: >-
+      The NWS API provides public access to critical forecasts, alerts,
+      observations, and other weather data through a RESTful, JSON-LD based
+      web service. It supports gridpoint forecasts, active weather alerts,
+      radar data, point-based lookups, zone forecasts, NWS office information,
+      and NOAA Weather Radio scripts. The API is free, requires no
+      authentication, and only asks that callers supply a User-Agent header
+      for identification.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.weather.gov/documentation/services-web-api
+    baseURL: https://api.weather.gov
+    tags:
+      - Weather
+      - Forecast
+      - Alerts
+      - Radar
+      - Observations
+    properties:
+      - type: Documentation
+        url: https://www.weather.gov/documentation/services-web-api
+      - type: OpenAPI
+        url: https://api.weather.gov/openapi.json
+      - type: GitHubRepository
+        url: https://github.com/weather-gov/api
+  - name: Climate Data Online (CDO) API
+    description: >-
+      The NOAA Climate Data Online Web Services API v2 provides RESTful access
+      to the CDO database of historical weather and climate data maintained by
+      the National Centers for Environmental Information (NCEI). Data types
+      include daily summaries, normals, precipitation, temperatures, and storm
+      events from thousands of global stations. Access requires a free token
+      obtained by registering an email address with NCDC.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
+    baseURL: https://www.ncdc.noaa.gov/cdo-web/api/v2
+    tags:
+      - Climate
+      - Historical Data
+      - Weather Records
+      - NCEI
+    properties:
+      - type: Documentation
+        url: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
+      - type: TokenRequest
+        url: https://www.ncdc.noaa.gov/cdo-web/token
+  - name: CO-OPS Tides and Currents API
+    description: >-
+      The NOAA Center for Operational Oceanographic Products and Services
+      (CO-OPS) Data Retrieval API provides access to water levels, tide
+      predictions, currents, and meteorological observations from hundreds
+      of monitoring stations around US coasts and inland waterways. Additional
+      metadata and derived product APIs complement the primary data retrieval
+      service. The API is free and requires no authentication.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://tidesandcurrents.noaa.gov/api/
+    baseURL: https://api.tidesandcurrents.noaa.gov/api/prod
+    tags:
+      - Tides
+      - Currents
+      - Water Levels
+      - Ocean
+      - Coastal
+    properties:
+      - type: Documentation
+        url: https://tidesandcurrents.noaa.gov/api/
+      - type: MetadataAPI
+        url: https://api.tidesandcurrents.noaa.gov/mdapi/prod/
+  - name: Aviation Weather API
+    description: >-
+      The NOAA Aviation Weather Center Data API provides structured aviation
+      weather products including METARs, TAFs, PIREPs, SIGMETs, G-AIRMETs,
+      and station/airport information. It serves worldwide coverage for
+      standard aeronautical weather and is used by pilots, dispatchers, and
+      aviation weather services. The API returns data in JSON, XML, CSV,
+      GeoJSON, and raw text formats, and enforces a rate limit of 100 requests
+      per minute.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://aviationweather.gov/data/api/
+    baseURL: https://aviationweather.gov/api/data
+    tags:
+      - Aviation
+      - METAR
+      - TAF
+      - PIREP
+      - SIGMET
+    properties:
+      - type: Documentation
+        url: https://aviationweather.gov/data/api/
+      - type: OpenAPI
+        url: https://aviationweather.gov/data/schema/openapi.yaml
+common:
+  - type: Website
+    url: https://www.noaa.gov
+  - type: Documentation
+    url: https://www.weather.gov/documentation
+  - type: GitHubOrg
+    url: https://github.com/NOAAGov
+  - type: GitHubOrg
+    url: https://github.com/weather-gov
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/noaa
+  - type: Blog
+    url: https://www.noaa.gov/news
+  - type: Pricing
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: StatusPage
+    url: https://www.weather.gov/im/tecnews
+  - type: X
+    url: https://x.com/NWS
+  - type: Plans
+    url: plans/noaa-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/noaa-rate-limits.yml
+  - type: FinOps
+    url: finops/noaa-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
