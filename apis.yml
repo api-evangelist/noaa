@@ -65,9 +65,9 @@ apis:
         url: json-schema/noaa-nws-zone.json
       - type: JSONSchema
         url: json-schema/noaa-nws-point.json
-      - type: Example
+      - type: Examples
         url: examples/noaa-nws-alert-example.json
-      - type: Example
+      - type: Examples
         url: examples/noaa-nws-gridpoint-forecast-example.json
       - type: GitHubRepository
         url: https://github.com/weather-gov/api
@@ -147,7 +147,7 @@ apis:
         url: json-schema/noaa-aviation-pireptext.json
       - type: JSONSchema
         url: json-schema/noaa-aviation-airsigmetjson.json
-      - type: Example
+      - type: Examples
         url: examples/noaa-aviation-metar-example.json
 common:
   - type: Website
@@ -178,7 +178,7 @@ common:
     url: vocabulary/noaa-vocabulary.yml
   - type: JSONLDContext
     url: json-ld/noaa-context.jsonld
-  - type: Example
+  - type: Examples
     url: examples/noaa-coops-tides-example.json
 maintainers:
   - FN: Kin Lane
