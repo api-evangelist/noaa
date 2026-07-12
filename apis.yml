@@ -150,6 +150,10 @@ apis:
       - type: Examples
         url: examples/noaa-aviation-metar-example.json
 common:
+  - type: DomainSecurity
+    url: security/noaa-domain-security.yml
+  - type: Authentication
+    url: authentication/noaa-authentication.yml
   - type: Website
     url: https://www.noaa.gov
   - type: Documentation
