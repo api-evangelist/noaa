@@ -13,7 +13,20 @@ description: >-
   weather products. All NOAA APIs are free to use as open government data with
   no licensing restrictions.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/noaa.png
 url: https://raw.githubusercontent.com/api-evangelist/noaa/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
@@ -30,125 +43,645 @@ tags:
   - Open Data
   - Environmental
 apis:
-  - name: National Weather Service API
-    description: >-
-      The NWS API provides public access to critical forecasts, alerts,
-      observations, and other weather data through a RESTful, JSON-LD based
-      web service. It supports gridpoint forecasts, active weather alerts,
-      radar data, point-based lookups, zone forecasts, NWS office information,
-      and NOAA Weather Radio scripts. The API is free, requires no
-      authentication, and only asks that callers supply a User-Agent header
-      for identification.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.weather.gov/documentation/services-web-api
-    baseURL: https://api.weather.gov
-    tags:
-      - Weather
-      - Forecast
-      - Alerts
-      - Radar
-      - Observations
-    properties:
-      - type: Documentation
-        url: https://www.weather.gov/documentation/services-web-api
-      - type: OpenAPI
-        url: https://api.weather.gov/openapi.json
-      - type: OpenAPI
-        url: openapi/noaa-nws-openapi.yml
-      - type: JSONSchema
-        url: json-schema/noaa-nws-alert.json
-      - type: JSONSchema
-        url: json-schema/noaa-nws-alertcollection.json
-      - type: JSONSchema
-        url: json-schema/noaa-nws-observation.json
-      - type: JSONSchema
-        url: json-schema/noaa-nws-zone.json
-      - type: JSONSchema
-        url: json-schema/noaa-nws-point.json
-      - type: Examples
-        url: examples/noaa-nws-alert-example.json
-      - type: Examples
-        url: examples/noaa-nws-gridpoint-forecast-example.json
-      - type: GitHubRepository
-        url: https://github.com/weather-gov/api
-  - name: Climate Data Online (CDO) API
-    description: >-
-      The NOAA Climate Data Online Web Services API v2 provides RESTful access
-      to the CDO database of historical weather and climate data maintained by
-      the National Centers for Environmental Information (NCEI). Data types
-      include daily summaries, normals, precipitation, temperatures, and storm
-      events from thousands of global stations. Access requires a free token
-      obtained by registering an email address with NCDC.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
-    baseURL: https://www.ncdc.noaa.gov/cdo-web/api/v2
-    tags:
-      - Climate
-      - Historical Data
-      - Weather Records
-      - NCEI
-    properties:
-      - type: Documentation
-        url: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
-      - type: TokenRequest
-        url: https://www.ncdc.noaa.gov/cdo-web/token
-  - name: CO-OPS Tides and Currents API
-    description: >-
-      The NOAA Center for Operational Oceanographic Products and Services
-      (CO-OPS) Data Retrieval API provides access to water levels, tide
-      predictions, currents, and meteorological observations from hundreds
-      of monitoring stations around US coasts and inland waterways. Additional
-      metadata and derived product APIs complement the primary data retrieval
-      service. The API is free and requires no authentication.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://tidesandcurrents.noaa.gov/api/
-    baseURL: https://api.tidesandcurrents.noaa.gov/api/prod
-    tags:
-      - Tides
-      - Currents
-      - Water Levels
-      - Ocean
-      - Coastal
-    properties:
-      - type: Documentation
-        url: https://tidesandcurrents.noaa.gov/api/
-      - type: MetadataAPI
-        url: https://api.tidesandcurrents.noaa.gov/mdapi/prod/
-  - name: Aviation Weather API
-    description: >-
-      The NOAA Aviation Weather Center Data API provides structured aviation
-      weather products including METARs, TAFs, PIREPs, SIGMETs, G-AIRMETs,
-      and station/airport information. It serves worldwide coverage for
-      standard aeronautical weather and is used by pilots, dispatchers, and
-      aviation weather services. The API returns data in JSON, XML, CSV,
-      GeoJSON, and raw text formats, and enforces a rate limit of 100 requests
-      per minute.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://aviationweather.gov/data/api/
-    baseURL: https://aviationweather.gov/api/data
-    tags:
-      - Aviation
-      - METAR
-      - TAF
-      - PIREP
-      - SIGMET
-    properties:
-      - type: Documentation
-        url: https://aviationweather.gov/data/api/
-      - type: OpenAPI
-        url: https://aviationweather.gov/data/schema/openapi.yaml
-      - type: OpenAPI
-        url: openapi/noaa-aviation-weather-openapi.yml
-      - type: JSONSchema
-        url: json-schema/noaa-aviation-metarjson.json
-      - type: JSONSchema
-        url: json-schema/noaa-aviation-tafjson.json
-      - type: JSONSchema
-        url: json-schema/noaa-aviation-pireptext.json
-      - type: JSONSchema
-        url: json-schema/noaa-aviation-airsigmetjson.json
-      - type: Examples
-        url: examples/noaa-aviation-metar-example.json
+- name: Climate Data Online (CDO) API
+  description: >-
+    The NOAA Climate Data Online Web Services API v2 provides RESTful access to the CDO database of historical
+    weather and climate data maintained by the National Centers for Environmental Information (NCEI).
+    Data types include daily summaries, normals, precipitation, temperatures, and storm events from thousands
+    of global stations. Access requires a free token obtained by registering an email address with NCDC.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
+  baseURL: https://www.ncdc.noaa.gov/cdo-web/api/v2
+  tags:
+  - Climate
+  - Historical Data
+  - Weather Records
+  - NCEI
+  properties:
+  - type: Documentation
+    url: https://www.ncdc.noaa.gov/cdo-web/webservices/v2
+  - type: TokenRequest
+    url: https://www.ncdc.noaa.gov/cdo-web/token
+- name: CO-OPS Tides and Currents API
+  description: >-
+    The NOAA Center for Operational Oceanographic Products and Services (CO-OPS) Data Retrieval API provides
+    access to water levels, tide predictions, currents, and meteorological observations from hundreds
+    of monitoring stations around US coasts and inland waterways. Additional metadata and derived product
+    APIs complement the primary data retrieval service. The API is free and requires no authentication.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://tidesandcurrents.noaa.gov/api/
+  baseURL: https://api.tidesandcurrents.noaa.gov/api/prod
+  tags:
+  - Tides
+  - Currents
+  - Water Levels
+  - Ocean
+  - Coastal
+  properties:
+  - type: Documentation
+    url: https://tidesandcurrents.noaa.gov/api/
+  - type: MetadataAPI
+    url: https://api.tidesandcurrents.noaa.gov/mdapi/prod/
+- aid: noaa:noaa-alerts-api
+  name: NOAA Alerts API
+  description: The Alerts API from NOAA — 8 operation(s) for alerts.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-aviation-api
+  name: NOAA Aviation API
+  description: The Aviation API from NOAA — 7 operation(s) for aviation.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Aviation
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-aviation-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-glossary-api
+  name: NOAA Glossary API
+  description: The Glossary API from NOAA — 1 operation(s) for glossary.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Glossary
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-glossary-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-gridpoints-api
+  name: NOAA Gridpoints API
+  description: The Gridpoints API from NOAA — 4 operation(s) for gridpoints.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Gridpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-gridpoints-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-icons-api
+  name: NOAA Icons API
+  description: The Icons API from NOAA — 3 operation(s) for icons.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Icons
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-icons-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-navigational-data-api
+  name: NOAA Navigational Data API
+  description: Decoded navigational information
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Navigational Data
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-navigational-data-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-offices-api
+  name: NOAA Offices API
+  description: The Offices API from NOAA — 8 operation(s) for offices.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Offices
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-offices-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-points-api
+  name: NOAA Points API
+  description: The Points API from NOAA — 3 operation(s) for points.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Points
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-points-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-products-api
+  name: NOAA Products API
+  description: The Products API from NOAA — 9 operation(s) for products.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-products-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-radar-api
+  name: NOAA Radar API
+  description: The Radar API from NOAA — 8 operation(s) for radar.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Radar
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-radar-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-radio-api
+  name: NOAA Radio API
+  description: The Radio API from NOAA — 1 operation(s) for radio.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Radio
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-radio-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-stations-api
+  name: NOAA Stations API
+  description: The Stations API from NOAA — 7 operation(s) for stations.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Stations
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-stations-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-thumbnails-api
+  name: NOAA Thumbnails API
+  description: The Thumbnails API from NOAA — 1 operation(s) for thumbnails.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Thumbnails
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-thumbnails-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-weather-data-api
+  name: NOAA Weather Data API
+  description: Decoded weather information
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Weather Data
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-weather-data-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
+- aid: noaa:noaa-zones-api
+  name: NOAA Zones API
+  description: The Zones API from NOAA — 6 operation(s) for zones.
+  humanURL: https://www.weather.gov/documentation/services-web-api
+  baseURL: https://api.weather.gov
+  tags:
+  - Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/noaa-zones-api-openapi.yml
+  - type: Documentation
+    url: https://www.weather.gov/documentation/services-web-api
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alert.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-alertcollection.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-observation.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-zone.json
+  - type: JSONSchema
+    url: json-schema/noaa-nws-point.json
+  - type: Examples
+    url: examples/noaa-nws-alert-example.json
+  - type: Examples
+    url: examples/noaa-nws-gridpoint-forecast-example.json
+  - type: GitHubRepository
+    url: https://github.com/weather-gov/api
+  - type: Documentation
+    url: https://aviationweather.gov/data/api/
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-metarjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-tafjson.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-pireptext.json
+  - type: JSONSchema
+    url: json-schema/noaa-aviation-airsigmetjson.json
+  - type: Examples
+    url: examples/noaa-aviation-metar-example.json
 common:
   - type: AgenticAccess
     url: agentic-access/noaa-agentic-access.yml
