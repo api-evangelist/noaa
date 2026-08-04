@@ -1,0 +1,45 @@
+{
+  "provider": "noaa",
+  "sources": [
+    "noaa-alerts-api-openapi.yml",
+    "noaa-aviation-api-openapi.yml",
+    "noaa-glossary-api-openapi.yml",
+    "noaa-gridpoints-api-openapi.yml",
+    "noaa-icons-api-openapi.yml",
+    "noaa-navigational-data-api-openapi.yml",
+    "noaa-offices-api-openapi.yml",
+    "noaa-points-api-openapi.yml",
+    "noaa-products-api-openapi.yml",
+    "noaa-radar-api-openapi.yml",
+    "noaa-radio-api-openapi.yml",
+    "noaa-stations-api-openapi.yml",
+    "noaa-thumbnails-api-openapi.yml",
+    "noaa-weather-data-api-openapi.yml",
+    "noaa-zones-api-openapi.yml"
+  ],
+  "outputs": [
+    "noaa-alerts-api-openapi.yml",
+    "noaa-aviation-api-openapi.yml",
+    "noaa-glossary-api-openapi.yml",
+    "noaa-gridpoints-api-openapi.yml",
+    "noaa-icons-api-openapi.yml",
+    "noaa-navigational-data-api-openapi.yml",
+    "noaa-offices-api-openapi.yml",
+    "noaa-points-api-openapi.yml",
+    "noaa-products-api-openapi.yml",
+    "noaa-radar-api-openapi.yml",
+    "noaa-radio-api-openapi.yml",
+    "noaa-stations-api-openapi.yml",
+    "noaa-thumbnails-api-openapi.yml",
+    "noaa-weather-data-api-openapi.yml",
+    "noaa-zones-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "noaa-navigational-data-api-openapi.yml: dangling $ref: #/components/responses/400",
+    "noaa-weather-data-api-openapi.yml: dangling $ref: #/components/responses/400"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
