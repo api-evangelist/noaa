@@ -1,4 +1,4 @@
-aid: https://raw.githubusercontent.com/api-evangelist/noaa/refs/heads/main/apis.yml
+aid: noaa
 name: NOAA
 description: >-
   The National Oceanic and Atmospheric Administration (NOAA) provides a suite
@@ -30,7 +30,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/noaa.png
 url: https://raw.githubusercontent.com/api-evangelist/noaa/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 tags:
   - Weather
   - Climate
