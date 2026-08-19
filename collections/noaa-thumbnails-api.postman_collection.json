@@ -1,0 +1,203 @@
+{
+  "item": [
+    {
+      "id": "241ce09a-e0ce-46ca-99a7-2aa672017b00",
+      "name": "Thumbnails",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a85bad99-ae96-470a-bb6f-f7a18a25c84f",
+          "name": "satellite thumbnails",
+          "request": {
+            "name": "satellite thumbnails",
+            "description": {
+              "content": "Returns a thumbnail image for a satellite region. Image services in API are deprecated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "satellite",
+                ":area"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "area",
+                  "description": "(Required) ."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88514ff6-3db1-4df0-bfb6-857c6748d0a9",
+              "name": "An image file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "satellite",
+                    ":area"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "area",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "image/jpeg"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3c1a6e93-f438-42f4-b31a-451747467060",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "satellite",
+                    ":area"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "area",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 789.8057620189078,\n  \"detail\": \"string\",\n  \"instance\": \"https://oajKSCCZsfuEIUGdyvNZp.omrFPPGwt0L3L0rqGfw85sKF3SrmOG-n.Hp61abNxFPLyzqZjmOR5r\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ebc15b5d-efb7-4867-aab7-eee7ef80942e",
+    "name": "AviationWeather.gov Alerts Thumbnails API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Schema for public data API of AviationWeather.gov.",
+      "type": "text/plain"
+    }
+  }
+}

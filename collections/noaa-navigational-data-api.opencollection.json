@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AviationWeather.gov Alerts Navigational Data API",
+    "version": "v4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Navigational Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Station info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/stationinfo",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Station ID(s)"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Station observation location information"
+        },
+        {
+          "info": {
+            "name": "Airport info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/airport",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Station ID(s)"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Information about airports"
+        },
+        {
+          "info": {
+            "name": "Navigational aid info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/navaid",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "three character identifier"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Navigational aid data"
+        },
+        {
+          "info": {
+            "name": "Navigational fix/waypoint info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/fix",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "5 letter Fix ID(s)"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Navigational fix data"
+        },
+        {
+          "info": {
+            "name": "Feature info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/feature",
+            "params": [
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Additional geographic features"
+        },
+        {
+          "info": {
+            "name": "Obstacle info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/data/obstacle",
+            "params": [
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query",
+                "description": "Geographic bounding box (lat0, lon0, lat1, lon1)"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "Format"
+              }
+            ]
+          },
+          "docs": "Aviation obstacle information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1475 @@
+{
+  "item": [
+    {
+      "id": "7f02eefc-366e-493b-b8d0-02bf54274fd6",
+      "name": "Offices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9834801c-3ed8-4229-882a-bef717c03ff0",
+          "name": "office",
+          "request": {
+            "name": "office",
+            "description": {
+              "content": "Returns metadata about a NWS forecast office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8db4fbb-a5f3-441d-a0b2-6d1ff6e884a6",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"@type\": \"GovernmentOrganization\",\n  \"@id\": \"https://VjgbxVUkUlrEEltLhQcJ.koapAYDRyYxN-kHXQfO9qMvxYJhlZRrklpEEf1+xIY0Iiiz\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"string\",\n    \"addressLocality\": \"string\",\n    \"addressRegion\": \"string\",\n    \"postalCode\": \"string\"\n  },\n  \"telephone\": \"string\",\n  \"faxNumber\": \"string\",\n  \"email\": \"string\",\n  \"sameAs\": \"https://AIczHk.vrwjRZobq1Q3gPQL7H45Shw4yTKCZ75x2LGtA-ACpbCKxxp8ZSUTBs\",\n  \"nwsRegion\": \"string\",\n  \"parentOrganization\": \"http://lyXqZqIuWVuGErAMshsEglkiEx.uzpgzr7VXmewvebikUt6EdpyB\",\n  \"responsibleCounties\": [\n    \"https://THefrhPxJisOMu.uilkDEvmKfrS1,RWQWnLfWJaY5,2-BzNE+0fbBJScu4Aq-Ay5NH8lVsyQ\",\n    \"http://VtyXDdZZWnQEqEiXagTI.pxor1i,C64g-u+,zTtR.DuB-x.FuWb7gXYR9Ob0te-P7sIiBLiVNauprEAeZjWQcGIf76L\"\n  ],\n  \"responsibleForecastZones\": [\n    \"https://jsEpGqDsURI.xzme0QcFbAa4fFmKusOZ,gq1W2djivc+etxNELiEzpiA\",\n    \"http://tvzwnMEjiWtWbamKjraYTEiDtXus.bcydvYjCsrpTIYhF1khvShfzKD7RyEWr8Bz-RVdvsoeiYrE1AaMqXnzYt86sKwfb98N0RlnxbskWJOU\"\n  ],\n  \"responsibleFireZones\": [\n    \"https://wINHIjXIqA.gpoRB5LiacC9jicq7meOb-aM2XTFSUmGS,ib1Q+joTDVRJiE\",\n    \"https://YVqMJrvopNALNbyclZpDSHqwigbYdaRiO.hiW1XKqcbU4orzcfVkST5savQw8fl\"\n  ],\n  \"approvedObservationStations\": [\n    \"http://yGDKiTxORFxpU.uzu9fqif1zBrEy12zCYEUISBjU0W8c6mcd,mL,vB-QyP6oEl\",\n    \"https://epjttYSFbhhcrON.xjkYT3Mn9xpXJo9syJyCAO0tEukrf8ZG\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a89a1c67-3ed4-43fc-a2dc-c6dcb10d0aec",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a73c5658-e5ac-4b01-81fd-6a53226932d2",
+          "name": "office briefing",
+          "request": {
+            "name": "office briefing",
+            "description": {
+              "content": "Returns active briefing for an NWS office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "briefing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6eb20662-843f-4cc4-abf6-24cdbee7c9b4",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"id\": \"a463849d-b7e3-63c7-2f16-61b7916eec41\",\n  \"startTime\": \"2002-07-14T18:19:24.803Z\",\n  \"endTime\": \"1963-06-19T15:09:23.444Z\",\n  \"updateTime\": \"2021-06-30T08:03:03.022Z\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"priority\": false,\n  \"download\": \"http://UDLu.msoo5HuVbBl4gtED7WRq2uxHkQfHWIqi6Japcl-H\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "272faa6b-a8cb-47d2-af03-9687c3104f2d",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72d77f82-23e7-452f-9856-6389b9b07eb1",
+          "name": "office briefing download latest",
+          "request": {
+            "name": "office briefing download latest",
+            "description": {
+              "content": "Returns the latest briefing for an office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "briefing",
+                "download",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34bea766-d9d4-4995-94f2-143ed950272f",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing",
+                    "download",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Found",
+              "code": 302,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a91bfa2b-7979-4f6b-995e-9147944feaf8",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing",
+                    "download",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acd5cf86-1d0a-4732-94eb-8925eb625936",
+          "name": "office briefing download",
+          "request": {
+            "name": "office briefing download",
+            "description": {
+              "content": "Returns a briefing for an office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "briefing",
+                "download",
+                ":briefingId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "briefingId",
+                  "description": "(Required) ."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10dd517d-ed83-44b5-9647-9fd039cc480d",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing",
+                    "download",
+                    ":briefingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "briefingId",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99218cc6-46c5-4c8a-89c1-37a883557a58",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "briefing",
+                    "download",
+                    ":briefingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "briefingId",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37bec793-9a35-453f-9cc2-9f0924ce4001",
+          "name": "office headline",
+          "request": {
+            "name": "office headline",
+            "description": {
+              "content": "Returns a specific news headline for a given NWS office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "headlines",
+                ":headlineId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "headlineId",
+                  "description": "(Required) Headline record ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43dd7bdb-8081-491c-8a67-512521def564",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "headlines",
+                    ":headlineId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "headlineId",
+                      "description": "(Required) Headline record ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"https://wbeasejMuyDojWpXwXXV.kcbxP0RtWFNCn,llDX5D4eTjAke2JPzD9Gx3jfVINWCJJTwbZn5sQsKYbIkl,\",\n  \"id\": \"string\",\n  \"office\": \"https://vTPWeKsbjAkeypjEdH.ikrCuXq.G0wL,rpBDITZQwMCaL4WAUAhcXruTot0tcVrIJ5A9\",\n  \"important\": true,\n  \"issuanceTime\": \"1963-05-23T16:38:17.213Z\",\n  \"link\": \"http://UtqhdvrraSHNDgRWQpreeJwohkaclRDyB.whpdZuA72giYBGuBKAeHRRmu-toOI1XrY7fQcgdmfTm7U\",\n  \"name\": \"string\",\n  \"title\": \"string\",\n  \"summary\": \"string\",\n  \"content\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87e12726-ffba-463d-b6bd-77da1b5c574d",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "headlines",
+                    ":headlineId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "headlineId",
+                      "description": "(Required) Headline record ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "969449c6-a8c8-406a-9cb2-fd6d92efe592",
+          "name": "office headlines",
+          "request": {
+            "name": "office headlines",
+            "description": {
+              "content": "Returns a list of news headlines for a given NWS office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "headlines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f3a158a-2190-4cca-8c10-d1928179aa42",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"@context\": [],\n  \"@graph\": [\n    {\n      \"@id\": \"http://dMtQSTi.wvWruwMFbE,ebSHtZI4BX40e+VNw69r4lqLjywzB6aZ8FDDs,qRArBCBxphZ7\",\n      \"id\": \"string\",\n      \"office\": \"https://cWqDLopdV.oasecorWBScZR6b7x23dCmxR9ZNaA161\",\n      \"important\": false,\n      \"issuanceTime\": \"2017-11-17T01:00:43.555Z\",\n      \"link\": \"http://RcyD.wcnoaOQUO+-PS\",\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"summary\": \"string\",\n      \"content\": \"string\"\n    },\n    {\n      \"@id\": \"http://lAwfCwhIG.kuyNa\",\n      \"id\": \"string\",\n      \"office\": \"http://VAsgXuKTSVRSpwGsUugwVrZ.ooeqrYUSK\",\n      \"important\": false,\n      \"issuanceTime\": \"2026-07-12T22:46:02.285Z\",\n      \"link\": \"http://dYtarmPDzfJ.ersc9HqAhxw498aL-GyigzaIyflL0RUi4vUUx\",\n      \"name\": \"string\",\n      \"title\": \"string\",\n      \"summary\": \"string\",\n      \"content\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29c8d04b-81fd-4211-ae62-097483fb39d1",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25785f8b-25c1-4b36-b499-3a0480f12a1a",
+          "name": "office weatherstory",
+          "request": {
+            "name": "office weatherstory",
+            "description": {
+              "content": "Returns active weather stories for an NWS office",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "weatherstories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "174a658b-20f3-45bc-bd06-8860b7522afe",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "weatherstories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "[\n  {\n    \"startTime\": \"2007-01-07T18:13:45.518Z\",\n    \"endTime\": \"1995-12-11T14:07:19.750Z\",\n    \"updateTime\": \"1950-11-25T02:04:54.724Z\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"altText\": \"string\",\n    \"priority\": false,\n    \"order\": 5,\n    \"download\": \"https://UUZeVBjN.ivZ,TerSOLsZATZK2TG6HHOegep\",\n    \"id\": \"b6714cc4-8f33-aad1-5969-a2219381658d\"\n  },\n  {\n    \"startTime\": \"1968-03-01T07:46:48.727Z\",\n    \"endTime\": \"2026-08-07T02:30:57.361Z\",\n    \"updateTime\": \"2020-08-01T07:28:53.606Z\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"altText\": \"string\",\n    \"priority\": true,\n    \"order\": 1,\n    \"download\": \"http://ngXqrGFhoCGejZbtXZ.bnvmxKEsjSiBF6h5-Ouo48rBFiAWOZJ2WOz8aJEozY9nAFJLgaI1ClNEJh+ZX-sTfX,7f\",\n    \"id\": \"c68e312f-0d4d-e3b1-1e57-468a073ab227\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9bc6e98b-6abb-4b79-84ae-7718cb2c34db",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "weatherstories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "290c32c0-7c2f-4ab2-b415-7c89323885c4",
+          "name": "office weatherstory image",
+          "request": {
+            "name": "office weatherstory image",
+            "description": {
+              "content": "Returns the image for a weather story",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "offices",
+                ":officeId",
+                "weatherstories",
+                "download",
+                ":imageId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeId",
+                  "description": "(Required) NWS office ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "imageId",
+                  "description": "(Required) ."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2e761a5-4524-4a12-969c-d8f0d57ae41a",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "weatherstories",
+                    "download",
+                    ":imageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "imageId",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "image/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3252171-e439-4556-80d8-cfac1325b3e6",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "offices",
+                    ":officeId",
+                    "weatherstories",
+                    "download",
+                    ":imageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeId",
+                      "description": "(Required) NWS office ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "imageId",
+                      "description": "(Required) ."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 500.9302236160454,\n  \"detail\": \"string\",\n  \"instance\": \"https://zgrMayqYxnJJsPDAAKhReMrRUQCnmuEe.snztCHlqlbUhZH5lQYYsNVhdYT,d+4Z6Z7uUXuJiOxoktOQMRZNn.ogmp+nd2Q-\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "540bf929-68cb-4cd8-821f-4bd0e2544a91",
+    "name": "AviationWeather.gov Alerts Offices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Schema for public data API of AviationWeather.gov.",
+      "type": "text/plain"
+    }
+  }
+}

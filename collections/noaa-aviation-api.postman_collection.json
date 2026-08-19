@@ -1,0 +1,1275 @@
+{
+  "item": [
+    {
+      "id": "42299507-377d-46e8-99da-dc9a9ba09808",
+      "name": "Aviation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1d651acb-e627-4815-8821-e7b8bdd66f9f",
+          "name": "cwsu",
+          "request": {
+            "name": "cwsu",
+            "description": {
+              "content": "Returns metadata about a Center Weather Service Unit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "cwsus",
+                ":cwsuId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cwsuId",
+                  "description": "(Required) NWS CWSU ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/ld+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30db9365-2a5d-4a0b-8f67-d477d2f3c40c",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/ld+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "{\n  \"@type\": \"GovernmentOrganization\",\n  \"@id\": \"https://YMv.lotBAG6upB7l9\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"string\",\n    \"addressLocality\": \"string\",\n    \"addressRegion\": \"string\",\n    \"postalCode\": \"string\"\n  },\n  \"telephone\": \"string\",\n  \"faxNumber\": \"string\",\n  \"email\": \"string\",\n  \"sameAs\": \"https://iowurHfhMqQYJVU.paR+Rj6nQer8z4onq3IeDD62\",\n  \"nwsRegion\": \"string\",\n  \"parentOrganization\": \"http://lPg.hax2pFAR,cbfxZJfdZqPwmg.0\",\n  \"responsibleCounties\": [\n    \"https://hUeOyLu.nllVP1CkUa0FEm6alZK+iPkwaJdhGH+FZpSRUIrWkWi\",\n    \"http://MUkxaqFqGfgpxkaowjkEneayn.sytU9LzUrYBCnJg1Jo8\"\n  ],\n  \"responsibleForecastZones\": [\n    \"http://zvQKiSLOIrNDkjPPyZyqevkDQF.lmmsXz-Uc.+HZSet,PLolSKUOKOT9sVQoxK6IopYMCsqzfgJmk.T1mH2XmtE2uB187Vy0PEGMu\",\n    \"http://JttoNcXSXetfObmkqLdCGnFjStBrhji.vscaBrMjWdHpJvfO4Bv,v3.ZV0XNe8J-qydgC+di,jpqPiTV6LZj7T\"\n  ],\n  \"responsibleFireZones\": [\n    \"http://rYThOdPUkUSki.kkfpnxT2UIW+Fn2zgZ+x\",\n    \"https://NRXCusnoauPfiyqokxkhdavjFgPIEJ.xxus,ctwsmHsA6QOOA\"\n  ],\n  \"approvedObservationStations\": [\n    \"https://aypWosqJHgJgf.rnhOC6bsEs7LE7bhBJv5AcniPadXFkRRC5ah\",\n    \"https://fveUufHEAshWUurBJYutR.hguFKJvFUuOIikCVvZCytJMcwkW5.LdG4nvYY.DXBsn4+9pb+XDbCreXDCtLEr3Cre0m\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0df3076b-023e-4310-b7f6-d84b614d2819",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4309e53e-c9b5-4ec6-8b57-89852feffae5",
+          "name": "cwas",
+          "request": {
+            "name": "cwas",
+            "description": {
+              "content": "Returns a list of Center Weather Advisories from a CWSU",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "cwsus",
+                ":cwsuId",
+                "cwas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cwsuId",
+                  "description": "(Required) NWS CWSU ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf1e9e32-c776-4b61-b9ee-6f4a5546d94f",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId",
+                    "cwas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"issueTime\": \"1995-10-22T21:21:02.047Z\",\n        \"cwsu\": \"<string>\",\n        \"sequence\": 8265,\n        \"start\": \"2004-01-01T20:37:15.703Z\",\n        \"end\": \"2018-12-03T08:05:16.631Z\",\n        \"observedProperty\": \"string\",\n        \"text\": \"string\"\n      },\n      \"id\": \"http://CDrcFQsqWxsyAplQlWybyNrevHe.uxdvIAYiwotVkjgtTNs9Y1.MxnC4YHiNmyKodXr2F8eTszjBons0XEWn10\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"string\",\n        \"issueTime\": \"1997-12-18T07:02:57.083Z\",\n        \"cwsu\": \"<string>\",\n        \"sequence\": 4111,\n        \"start\": \"1949-11-07T21:50:13.404Z\",\n        \"end\": \"1973-12-16T16:51:51.826Z\",\n        \"observedProperty\": \"string\",\n        \"text\": \"string\"\n      },\n      \"id\": \"http://FDXsag.zpwclzm+NPjbbpw4j4uZdp9WEFb,JCLT1bf-g-Rq\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f01a2d6-d6f0-4887-b8e5-9698898a960f",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId",
+                    "cwas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ecae3ab-38e3-4d9c-b4d3-9b4b5a190a76",
+          "name": "cwa",
+          "request": {
+            "name": "cwa",
+            "description": {
+              "content": "Returns a list of Center Weather Advisories from a CWSU",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "cwsus",
+                ":cwsuId",
+                "cwas",
+                ":date",
+                ":sequence"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cwsuId",
+                  "description": "(Required) NWS CWSU ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<date>",
+                  "key": "date",
+                  "description": "(Required) Date (YYYY-MM-DD format)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sequence",
+                  "description": "(Required) Sequence number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28294acd-cd28-4441-bcef-97c7bed296ad",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId",
+                    "cwas",
+                    ":date",
+                    ":sequence"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sequence",
+                      "description": "(Required) Sequence number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      3435.464486313152,\n      5716.194479960323\n    ],\n    \"bbox\": [\n      2220.2843817189323,\n      8654.29675940979,\n      9555.2524607877,\n      3841.8761365321443\n    ]\n  },\n  \"properties\": {\n    \"id\": \"string\",\n    \"issueTime\": \"2025-10-30T17:36:04.331Z\",\n    \"cwsu\": \"<string>\",\n    \"sequence\": 6174,\n    \"start\": \"1991-02-04T23:28:02.007Z\",\n    \"end\": \"1951-07-10T09:58:03.052Z\",\n    \"observedProperty\": \"string\",\n    \"text\": \"string\"\n  },\n  \"id\": \"http://zezGNcQYFzqSEcUuXxYwdr.kbgcD+2JbEeq8bXKjVETh5BMOwYkmrZfo3XWuzZkSWJMmcAHNy..oRvNvNU3+nIb1\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b635dc65-cf3d-49d4-94a1-623d059bcfda",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "cwsus",
+                    ":cwsuId",
+                    "cwas",
+                    ":date",
+                    ":sequence"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cwsuId",
+                      "description": "(Required) NWS CWSU ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sequence",
+                      "description": "(Required) Sequence number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9bc00d8-e453-4f36-a159-e048a08d09d6",
+          "name": "sigmet Query",
+          "request": {
+            "name": "sigmet Query",
+            "description": {
+              "content": "Returns a list of SIGMET/AIRMETs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "sigmets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>",
+                  "description": "Start time"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>",
+                  "description": "End time"
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<date>",
+                  "description": "Date (YYYY-MM-DD format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "atsu",
+                  "value": "<string>",
+                  "description": "ATSU identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "sequence",
+                  "value": "<string>",
+                  "description": "SIGMET sequence number"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1176e153-9036-413b-b528-18fab35d5a4a",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "atsu",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sequence",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://wwiLbCNzqkTh.pkpJxjkjOwlePKcOvQjdwlOdyASpwGt8T3H\",\n        \"issueTime\": \"1966-05-18T08:38:50.505Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://VIJhHvJqvGSL.yzVs0BmTyM.pD7JEqslG1SO6egqsv7MZ9yfo\",\n        \"start\": \"2022-01-07T06:19:07.533Z\",\n        \"end\": \"1949-12-16T00:10:27.648Z\"\n      },\n      \"id\": \"https://xZGubWKxItqtp.lssVfShYzBqqk7As94uiuNdnagaNdrs.pLcF5vmgGuxY\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://lgJyw.lvqzqy6,hQqvfQJiWTBNOmlkNsJLpYxaFwOe+JouU1zr4CEDn04-bJh522X.hQF2zbavvcFX4Fk3Eq\",\n        \"issueTime\": \"1958-07-28T01:25:09.634Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://hGoUuRSBuIVInaNtethyZYOsOv.ytfoGjxpOyFaLtKrSyw\",\n        \"start\": \"2009-08-05T10:44:02.035Z\",\n        \"end\": \"2001-07-24T17:11:00.782Z\"\n      },\n      \"id\": \"http://NeNTmJig.iesT+XVvJTTPC4vZ5YkWzRdPSpaa\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74e89966-25b3-4e10-8d74-b55b75f9d057",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "atsu",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sequence",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "029e0559-4c52-4a45-b9d9-d72c561da13d",
+          "name": "sigmets By ATSU",
+          "request": {
+            "name": "sigmets By ATSU",
+            "description": {
+              "content": "Returns a list of SIGMET/AIRMETs for the specified ATSU",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "sigmets",
+                ":atsu"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "atsu",
+                  "description": "(Required) ATSU identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac67008c-375d-4998-a8c8-d468f8b69439",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://wwiLbCNzqkTh.pkpJxjkjOwlePKcOvQjdwlOdyASpwGt8T3H\",\n        \"issueTime\": \"1966-05-18T08:38:50.505Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://VIJhHvJqvGSL.yzVs0BmTyM.pD7JEqslG1SO6egqsv7MZ9yfo\",\n        \"start\": \"2022-01-07T06:19:07.533Z\",\n        \"end\": \"1949-12-16T00:10:27.648Z\"\n      },\n      \"id\": \"https://xZGubWKxItqtp.lssVfShYzBqqk7As94uiuNdnagaNdrs.pLcF5vmgGuxY\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://lgJyw.lvqzqy6,hQqvfQJiWTBNOmlkNsJLpYxaFwOe+JouU1zr4CEDn04-bJh522X.hQF2zbavvcFX4Fk3Eq\",\n        \"issueTime\": \"1958-07-28T01:25:09.634Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://hGoUuRSBuIVInaNtethyZYOsOv.ytfoGjxpOyFaLtKrSyw\",\n        \"start\": \"2009-08-05T10:44:02.035Z\",\n        \"end\": \"2001-07-24T17:11:00.782Z\"\n      },\n      \"id\": \"http://NeNTmJig.iesT+XVvJTTPC4vZ5YkWzRdPSpaa\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "380fbb02-243e-4676-9ebb-47b1583fc7de",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4647dac-57f8-4a43-85a2-dced47e730b5",
+          "name": "sigmets By ATSU By Date",
+          "request": {
+            "name": "sigmets By ATSU By Date",
+            "description": {
+              "content": "Returns a list of SIGMET/AIRMETs for the specified ATSU for the specified date",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "sigmets",
+                ":atsu",
+                ":date"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "atsu",
+                  "description": "(Required) ATSU identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<date>",
+                  "key": "date",
+                  "description": "(Required) Date (YYYY-MM-DD format)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d5bf68c-d818-414d-bfa4-d8a6e36f5a1c",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu",
+                    ":date"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://wwiLbCNzqkTh.pkpJxjkjOwlePKcOvQjdwlOdyASpwGt8T3H\",\n        \"issueTime\": \"1966-05-18T08:38:50.505Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://VIJhHvJqvGSL.yzVs0BmTyM.pD7JEqslG1SO6egqsv7MZ9yfo\",\n        \"start\": \"2022-01-07T06:19:07.533Z\",\n        \"end\": \"1949-12-16T00:10:27.648Z\"\n      },\n      \"id\": \"https://xZGubWKxItqtp.lssVfShYzBqqk7As94uiuNdnagaNdrs.pLcF5vmgGuxY\"\n    },\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Point\",\n        \"coordinates\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"bbox\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"properties\": {\n        \"id\": \"http://lgJyw.lvqzqy6,hQqvfQJiWTBNOmlkNsJLpYxaFwOe+JouU1zr4CEDn04-bJh522X.hQF2zbavvcFX4Fk3Eq\",\n        \"issueTime\": \"1958-07-28T01:25:09.634Z\",\n        \"fir\": \"string\",\n        \"atsu\": \"<string>\",\n        \"sequence\": \"string\",\n        \"phenomenon\": \"https://hGoUuRSBuIVInaNtethyZYOsOv.ytfoGjxpOyFaLtKrSyw\",\n        \"start\": \"2009-08-05T10:44:02.035Z\",\n        \"end\": \"2001-07-24T17:11:00.782Z\"\n      },\n      \"id\": \"http://NeNTmJig.iesT+XVvJTTPC4vZ5YkWzRdPSpaa\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77dc4cf1-fb0f-4d92-99d0-0c5234070528",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu",
+                    ":date"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69dc2804-090f-440c-b651-b02cbcc4a812",
+          "name": "sigmet",
+          "request": {
+            "name": "sigmet",
+            "description": {
+              "content": "Returns a specific SIGMET/AIRMET",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "aviation",
+                "sigmets",
+                ":atsu",
+                ":date",
+                ":time"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "atsu",
+                  "description": "(Required) ATSU identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<date>",
+                  "key": "date",
+                  "description": "(Required) Date (YYYY-MM-DD format)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "time",
+                  "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/geo+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e25298cf-f358-4044-9399-f6bbb7af2539",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu",
+                    ":date",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "time",
+                      "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/geo+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/geo+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Point\",\n    \"coordinates\": [\n      9879.278538058586,\n      444.67195626115455\n    ],\n    \"bbox\": [\n      8613.698053815657,\n      3408.747494184513,\n      9425.566650290082,\n      6324.829304408837\n    ]\n  },\n  \"properties\": {\n    \"id\": \"https://zKNPskYbwJx.wpimhITCbmLRQNPJJpcZ,uEODEYhCTaR,PhaF0gze33w4J3tZ\",\n    \"issueTime\": \"2025-08-30T13:24:45.321Z\",\n    \"fir\": \"string\",\n    \"atsu\": \"<string>\",\n    \"sequence\": \"string\",\n    \"phenomenon\": \"https://AgYaeIiTUlbHxL.vadfIvwCKpjeU0Bo59AbjqrCEoJHiqU4p15ILicnkXPV6uMuX,RKLtYkMb8XDtR2\",\n    \"start\": \"1953-11-23T22:11:59.648Z\",\n    \"end\": \"1985-04-26T22:39:32.411Z\"\n  },\n  \"id\": \"http://vqiZplWBzSplGBeOBNBIXaLr.denCKvE1IdeO1lOttZAT7ob,NHVGt61pyFf4,q4RizgdS5DlbOpHGm2DdXB\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "856fe670-114c-4187-be21-e8c6a4a75610",
+              "name": "An error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "aviation",
+                    "sigmets",
+                    ":atsu",
+                    ":date",
+                    ":time"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "atsu",
+                      "description": "(Required) ATSU identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<date>",
+                      "key": "date",
+                      "description": "(Required) Date (YYYY-MM-DD format)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "time",
+                      "description": "(Required) Time (HHMM format). This time is always specified in UTC (Zulu) time."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Correlation-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Request-Id",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.\n",
+                  "key": "X-Server-Id",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"about:blank\",\n  \"title\": \"string\",\n  \"status\": 827.3404406583629,\n  \"detail\": \"string\",\n  \"instance\": \"http://SbBBZLhAWPQVAGypUSQRcxiHWksZZ.gawlF6KABfqb-ajzh+zQdaW9BK\",\n  \"correlationId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dd681375-ede5-4c76-b1b9-b860026a9747",
+    "name": "AviationWeather.gov Alerts Aviation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Schema for public data API of AviationWeather.gov.",
+      "type": "text/plain"
+    }
+  }
+}

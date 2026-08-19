@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AviationWeather.gov Alerts Glossary API",
+    "version": "v4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Glossary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "glossary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/glossary"
+          },
+          "docs": "Returns glossary terms"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
