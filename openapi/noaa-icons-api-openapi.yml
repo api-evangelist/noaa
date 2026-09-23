@@ -1,9 +1,14 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AviationWeather.gov Alerts Icons API
-  description: Schema for public data API of AviationWeather.gov.
-  termsOfService: /data/api/
-  version: v4.0
+  title: weather.gov Icons API
+  description: weather.gov API
+  version: 3.9.2
+servers:
+- url: https://api.weather.gov
+  description: Production server
+security:
+- userAgent: []
+- apiKeyAuth: []
 tags:
 - name: Icons
 paths:
@@ -70,6 +75,8 @@ paths:
       parameters: []
       tags:
       - Icons
+      summary: Icons
+      x-summary-source: derived
   /icons/{set}/{timeOfDay}/{first}/{second}:
     parameters:
     - name: set
@@ -139,6 +146,8 @@ paths:
       parameters: []
       tags:
       - Icons
+      summary: Icons dual condition
+      x-summary-source: derived
   /icons:
     get:
       description: Returns a list of icon codes and textual descriptions. Icon services in API are deprecated.
@@ -179,13 +188,32 @@ paths:
       parameters: []
       tags:
       - Icons
+      summary: Icons summary
+      x-summary-source: derived
 components:
+  headers:
+    RequestId:
+      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
+
+        '
+      schema:
+        type: string
+    ServerId:
+      description: 'The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
+
+        '
+      schema:
+        type: string
+    CorrelationId:
+      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
+
+        '
+      schema:
+        type: string
   schemas:
-    JsonLdContext:
-      anyOf:
-      - type: array
-        items: {}
-      - type: object
+    BinaryFile:
+      type: string
+      format: binary
     ProblemDetail:
       required:
       - type
@@ -241,28 +269,11 @@ components:
           - 493c3a1d-f87e-407f-ae2c-24483f5aab63
       description: Detail about an error. This document conforms to RFC 7807 (Problem Details for HTTP APIs).
       additionalProperties: true
-    BinaryFile:
-      type: string
-      format: binary
-  headers:
-    CorrelationId:
-      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
-
-        '
-      schema:
-        type: string
-    RequestId:
-      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
-
-        '
-      schema:
-        type: string
-    ServerId:
-      description: 'The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
-
-        '
-      schema:
-        type: string
+    JsonLdContext:
+      anyOf:
+      - type: array
+        items: {}
+      - type: object
   responses:
     Error:
       description: An error response.
@@ -277,3 +288,27 @@ components:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/ProblemDetail'
+  securitySchemes:
+    userAgent:
+      type: apiKey
+      description: 'We require that all consumers of the API include a User-Agent header in requests. This is due to a high number of scripts exhibiting abusive behavior (intentional or unintentional). We recommend setting the value to something that identifies your application and includes a contact email. This will help us contact you if we notice unusual behavior and also aid in troubleshooting issues.
+
+        The API remains open and free to use and there are no limits imposed based on the User-Agent string.
+
+        This mechanism will be replaced with a more typical API key system at a later date.
+
+        '
+      name: User-Agent
+      in: header
+    apiKeyAuth:
+      type: apiKey
+      description: 'We are testing including a more traditional API Key system on certain endpoints.  This is due to a large change in the weather.gov site.
+
+        The API remains open and free to use and there are no limits imposed based on the X-Api-Key string.
+
+        '
+      name: API-Key
+      in: header
+externalDocs:
+  description: Full API documentation
+  url: https://www.weather.gov/documentation/services-web-api

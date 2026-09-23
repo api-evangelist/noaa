@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: AviationWeather.gov Alerts Navigational Data API
+  title: AviationWeather.gov Navigational Data API
   description: Schema for public data API of AviationWeather.gov.
   termsOfService: /data/api/
   version: v4.0
@@ -33,6 +33,8 @@ paths:
                 $ref: '#/components/schemas/StationInfoXML'
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataStationinfo
+      x-operation-id-source: derived
   /api/data/airport:
     get:
       tags:
@@ -120,6 +122,8 @@ paths:
                       type: array
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataAirport
+      x-operation-id-source: derived
   /api/data/navaid:
     get:
       tags:
@@ -193,6 +197,8 @@ paths:
                       - 05E
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataNavaid
+      x-operation-id-source: derived
   /api/data/fix:
     get:
       tags:
@@ -242,6 +248,8 @@ paths:
                       - -94.7681
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataFix
+      x-operation-id-source: derived
   /api/data/feature:
     get:
       tags:
@@ -256,6 +264,8 @@ paths:
           description: successful operation
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataFeature
+      x-operation-id-source: derived
   /api/data/obstacle:
     get:
       tags:
@@ -270,6 +280,8 @@ paths:
           description: successful operation
         400:
           $ref: '#/components/responses/400'
+      operationId: getApiDataObstacle
+      x-operation-id-source: derived
 components:
   schemas:
     StationInfoXML:
@@ -334,46 +346,6 @@ components:
                 properties:
                   METAR: null
                   TAF: null
-    StationInfoJSON:
-      type: array
-      items:
-        type: object
-        properties:
-          icaoId:
-            type: string
-            description: ICAO station identifier
-          iataId:
-            type: string
-            description: IATA station identifier
-          faaId:
-            type: string
-            description: FAA station identifier
-          site:
-            type: string
-            description: Site name
-          lat:
-            type: number
-            description: Latitude
-          lon:
-            type: number
-            description: Longitude
-          elev:
-            type: number
-            description: Elevation
-          state:
-            type: string
-            description: State or region
-          country:
-            type: string
-            description: Country
-          priority:
-            type: number
-            description: Priority display order
-          siteType:
-            type: array
-            description: METAR and/or TAF availability
-            items:
-              type: string
     StationInfoGeoJSON:
       type: object
       properties:
@@ -440,6 +412,46 @@ components:
                     examples:
                     - - -87.9316
                       - 41.9602
+    StationInfoJSON:
+      type: array
+      items:
+        type: object
+        properties:
+          icaoId:
+            type: string
+            description: ICAO station identifier
+          iataId:
+            type: string
+            description: IATA station identifier
+          faaId:
+            type: string
+            description: FAA station identifier
+          site:
+            type: string
+            description: Site name
+          lat:
+            type: number
+            description: Latitude
+          lon:
+            type: number
+            description: Longitude
+          elev:
+            type: number
+            description: Elevation
+          state:
+            type: string
+            description: State or region
+          country:
+            type: string
+            description: Country
+          priority:
+            type: number
+            description: Priority display order
+          siteType:
+            type: array
+            description: METAR and/or TAF availability
+            items:
+              type: string
   parameters:
     RawJSONGeo:
       name: format
@@ -453,33 +465,6 @@ components:
         - raw
         - json
         - geojson
-        default: raw
-    bbox:
-      name: bbox
-      in: query
-      description: Geographic bounding box (lat0, lon0, lat1, lon1)
-      required: false
-      examples:
-        '-':
-          value: ''
-        box:
-          summary: A small box around Chicago
-          value: 40,-90,45,-85
-      schema:
-        type: string
-    RawJSONGeoXML:
-      name: format
-      in: query
-      description: Format
-      required: false
-      explode: true
-      schema:
-        type: string
-        enum:
-        - raw
-        - json
-        - geojson
-        - xml
         default: raw
     ids:
       name: ids
@@ -498,5 +483,32 @@ components:
         states:
           summary: A 2 letter state abbreviation preceded by a @
           value: '@WA'
+      schema:
+        type: string
+    RawJSONGeoXML:
+      name: format
+      in: query
+      description: Format
+      required: false
+      explode: true
+      schema:
+        type: string
+        enum:
+        - raw
+        - json
+        - geojson
+        - xml
+        default: raw
+    bbox:
+      name: bbox
+      in: query
+      description: Geographic bounding box (lat0, lon0, lat1, lon1)
+      required: false
+      examples:
+        '-':
+          value: ''
+        box:
+          summary: A small box around Chicago
+          value: 40,-90,45,-85
       schema:
         type: string
