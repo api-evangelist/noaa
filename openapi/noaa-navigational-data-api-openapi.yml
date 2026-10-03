@@ -344,6 +344,108 @@ components:
       schema:
         type: string
   schemas:
+    StationInfoXML:
+      xml:
+        name: response
+      type: object
+      properties:
+        request_index:
+          type: number
+        data_source:
+          properties:
+            name:
+              type: string
+              enum:
+              - aircraftreports
+              xml:
+                attribute: true
+        request:
+          properties:
+            type:
+              type: string
+              enum:
+              - retrieve
+              xml:
+                attribute: true
+        errors: null
+        warnings: null
+        time_taken_ms:
+          type: number
+        data:
+          type: array
+          xml:
+            name: data
+            wrapped: true
+          items:
+            type: object
+            xml:
+              name: Station
+            properties:
+              station_id:
+                type: string
+              iata_id:
+                type: string
+              wmo_id:
+                type: string
+              faa_id:
+                type: string
+              latitude:
+                type: string
+              longitude:
+                type: string
+              elevation_m:
+                type: string
+              site:
+                type: string
+              state:
+                type: string
+              country:
+                type: string
+              site_type:
+                type: object
+                properties:
+                  METAR: null
+                  TAF: null
+    StationInfoJSON:
+      type: array
+      items:
+        type: object
+        properties:
+          icaoId:
+            type: string
+            description: ICAO station identifier
+          iataId:
+            type: string
+            description: IATA station identifier
+          faaId:
+            type: string
+            description: FAA station identifier
+          site:
+            type: string
+            description: Site name
+          lat:
+            type: number
+            description: Latitude
+          lon:
+            type: number
+            description: Longitude
+          elev:
+            type: number
+            description: Elevation
+          state:
+            type: string
+            description: State or region
+          country:
+            type: string
+            description: Country
+          priority:
+            type: number
+            description: Priority display order
+          siteType:
+            type: array
+            description: METAR and/or TAF availability
+            items:
+              type: string
     StationInfoGeoJSON:
       type: object
       properties:
@@ -410,105 +512,3 @@ components:
                     examples:
                     - - -87.9316
                       - 41.9602
-    StationInfoJSON:
-      type: array
-      items:
-        type: object
-        properties:
-          icaoId:
-            type: string
-            description: ICAO station identifier
-          iataId:
-            type: string
-            description: IATA station identifier
-          faaId:
-            type: string
-            description: FAA station identifier
-          site:
-            type: string
-            description: Site name
-          lat:
-            type: number
-            description: Latitude
-          lon:
-            type: number
-            description: Longitude
-          elev:
-            type: number
-            description: Elevation
-          state:
-            type: string
-            description: State or region
-          country:
-            type: string
-            description: Country
-          priority:
-            type: number
-            description: Priority display order
-          siteType:
-            type: array
-            description: METAR and/or TAF availability
-            items:
-              type: string
-    StationInfoXML:
-      xml:
-        name: response
-      type: object
-      properties:
-        request_index:
-          type: number
-        data_source:
-          properties:
-            name:
-              type: string
-              enum:
-              - aircraftreports
-              xml:
-                attribute: true
-        request:
-          properties:
-            type:
-              type: string
-              enum:
-              - retrieve
-              xml:
-                attribute: true
-        errors: null
-        warnings: null
-        time_taken_ms:
-          type: number
-        data:
-          type: array
-          xml:
-            name: data
-            wrapped: true
-          items:
-            type: object
-            xml:
-              name: Station
-            properties:
-              station_id:
-                type: string
-              iata_id:
-                type: string
-              wmo_id:
-                type: string
-              faa_id:
-                type: string
-              latitude:
-                type: string
-              longitude:
-                type: string
-              elevation_m:
-                type: string
-              site:
-                type: string
-              state:
-                type: string
-              country:
-                type: string
-              site_type:
-                type: object
-                properties:
-                  METAR: null
-                  TAF: null
