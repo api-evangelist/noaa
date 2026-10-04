@@ -351,12 +351,6 @@ paths:
       x-summary-source: derived
 components:
   headers:
-    RequestId:
-      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
-
-        '
-      schema:
-        type: string
     ServerId:
       description: 'The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
 
@@ -369,7 +363,35 @@ components:
         '
       schema:
         type: string
+    RequestId:
+      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
+
+        '
+      schema:
+        type: string
   schemas:
+    TextProductLocationCollection:
+      type: object
+      properties:
+        '@context':
+          $ref: '#/components/schemas/JsonLdContext'
+        locations:
+          type: object
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+    TextProductCollection:
+      type: object
+      properties:
+        '@context':
+          $ref: '#/components/schemas/JsonLdContext'
+        '@graph':
+          type: array
+          items:
+            $ref: '#/components/schemas/TextProduct'
+      additionalProperties: false
     TextProductTypeCollection:
       type: object
       properties:
@@ -388,23 +410,6 @@ components:
               productName:
                 type: string
             additionalProperties: false
-      additionalProperties: false
-    JsonLdContext:
-      anyOf:
-      - type: array
-        items: {}
-      - type: object
-    TextProductLocationCollection:
-      type: object
-      properties:
-        '@context':
-          $ref: '#/components/schemas/JsonLdContext'
-        locations:
-          type: object
-          additionalProperties:
-            type:
-            - string
-            - 'null'
       additionalProperties: false
     TextProduct:
       type: object
@@ -430,6 +435,11 @@ components:
         productText:
           type: string
       additionalProperties: false
+    JsonLdContext:
+      anyOf:
+      - type: array
+        items: {}
+      - type: object
     ProblemDetail:
       required:
       - type
@@ -485,16 +495,6 @@ components:
           - 493c3a1d-f87e-407f-ae2c-24483f5aab63
       description: Detail about an error. This document conforms to RFC 7807 (Problem Details for HTTP APIs).
       additionalProperties: true
-    TextProductCollection:
-      type: object
-      properties:
-        '@context':
-          $ref: '#/components/schemas/JsonLdContext'
-        '@graph':
-          type: array
-          items:
-            $ref: '#/components/schemas/TextProduct'
-      additionalProperties: false
   responses:
     Error:
       description: An error response.

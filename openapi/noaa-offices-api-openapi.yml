@@ -244,12 +244,6 @@ paths:
       x-summary-source: derived
 components:
   headers:
-    RequestId:
-      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
-
-        '
-      schema:
-        type: string
     ServerId:
       description: 'The identifier of the server that generated the response, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
 
@@ -262,21 +256,13 @@ components:
         '
       schema:
         type: string
+    RequestId:
+      description: 'A unique identifier for the request, used for NWS debugging purposes. Please include this identifier with any correspondence to help us investigate your issue.
+
+        '
+      schema:
+        type: string
   schemas:
-    OfficeWeatherStoryCollection:
-      type: array
-      items:
-        $ref: '#/components/schemas/OfficeWeatherStory'
-    NWSOfficeId:
-      oneOf:
-      - $ref: '#/components/schemas/NWSForecastOfficeId'
-      - $ref: '#/components/schemas/NWSRegionalHQId'
-      - $ref: '#/components/schemas/NWSNationalHQId'
-    NWSNationalHQId:
-      enum:
-      - NWS
-      type: string
-      description: Three-letter identifier for NWS National HQ.
     Office:
       type: object
       properties:
@@ -344,16 +330,61 @@ components:
             type: string
             format: uri
       additionalProperties: false
-    NWSRegionalHQId:
-      enum:
-      - ARH
-      - CRH
-      - ERH
-      - PRH
-      - SRH
-      - WRH
-      type: string
-      description: Three-letter identifier for a NWS Regional HQ.
+    NWSOfficeId:
+      oneOf:
+      - $ref: '#/components/schemas/NWSForecastOfficeId'
+      - $ref: '#/components/schemas/NWSRegionalHQId'
+      - $ref: '#/components/schemas/NWSNationalHQId'
+    OfficeHeadlineCollection:
+      required:
+      - '@context'
+      - '@graph'
+      type: object
+      properties:
+        '@context':
+          $ref: '#/components/schemas/JsonLdContext'
+        '@graph':
+          type: array
+          items:
+            $ref: '#/components/schemas/OfficeHeadline'
+      additionalProperties: false
+    OfficeHeadline:
+      type: object
+      properties:
+        '@context':
+          $ref: '#/components/schemas/JsonLdContext'
+        '@id':
+          type: string
+          format: uri
+        id:
+          type: string
+        office:
+          type: string
+          format: uri
+        important:
+          type: boolean
+        issuanceTime:
+          type: string
+          format: date-time
+        link:
+          type: string
+          format: uri
+        name:
+          type: string
+        title:
+          type: string
+        summary:
+          type:
+          - string
+          - 'null'
+        content:
+          type: string
+    OfficeWeatherStoryCollection:
+      type: array
+      items:
+        $ref: '#/components/schemas/OfficeWeatherStory'
+    OfficeBriefing:
+      $ref: '#/components/schemas/NWSConnectDocumentMetadata'
     NWSConnectDocumentMetadata:
       type: object
       properties:
@@ -447,39 +478,6 @@ components:
           - 493c3a1d-f87e-407f-ae2c-24483f5aab63
       description: Detail about an error. This document conforms to RFC 7807 (Problem Details for HTTP APIs).
       additionalProperties: true
-    OfficeBriefing:
-      $ref: '#/components/schemas/NWSConnectDocumentMetadata'
-    OfficeHeadline:
-      type: object
-      properties:
-        '@context':
-          $ref: '#/components/schemas/JsonLdContext'
-        '@id':
-          type: string
-          format: uri
-        id:
-          type: string
-        office:
-          type: string
-          format: uri
-        important:
-          type: boolean
-        issuanceTime:
-          type: string
-          format: date-time
-        link:
-          type: string
-          format: uri
-        name:
-          type: string
-        title:
-          type: string
-        summary:
-          type:
-          - string
-          - 'null'
-        content:
-          type: string
     NWSForecastOfficeId:
       enum:
       - AKQ
@@ -617,19 +615,24 @@ components:
       - ONP
       type: string
       description: Three-letter identifier for a NWS office.
-    OfficeHeadlineCollection:
-      required:
-      - '@context'
-      - '@graph'
-      type: object
-      properties:
-        '@context':
-          $ref: '#/components/schemas/JsonLdContext'
-        '@graph':
-          type: array
-          items:
-            $ref: '#/components/schemas/OfficeHeadline'
-      additionalProperties: false
+    NWSRegionalHQId:
+      enum:
+      - ARH
+      - CRH
+      - ERH
+      - PRH
+      - SRH
+      - WRH
+      type: string
+      description: Three-letter identifier for a NWS Regional HQ.
+    NWSNationalHQId:
+      enum:
+      - NWS
+      type: string
+      description: Three-letter identifier for NWS National HQ.
+    BinaryFile:
+      type: string
+      format: binary
     OfficeWeatherStory:
       required:
       - startTime
@@ -653,9 +656,14 @@ components:
             minimum: 1
             type: integer
             description: The order in which a weather story should be displayed. Unique for each object.
-    BinaryFile:
-      type: string
-      format: binary
+  parameters:
+    NWSOfficeId:
+      name: officeId
+      in: path
+      description: NWS office ID
+      required: true
+      schema:
+        $ref: '#/components/schemas/NWSOfficeId'
   responses:
     Error:
       description: An error response.
@@ -670,14 +678,6 @@ components:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/ProblemDetail'
-  parameters:
-    NWSOfficeId:
-      name: officeId
-      in: path
-      description: NWS office ID
-      required: true
-      schema:
-        $ref: '#/components/schemas/NWSOfficeId'
   securitySchemes:
     userAgent:
       type: apiKey
